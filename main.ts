@@ -1,7 +1,6 @@
-//% color="#307554" icon="\uf7fb"
+//% color="#307554" icon="\uf7fb" weight = 10 blockGap = 8
 //% block="Simplified"
 //% groups='["Sprites", "Arrays"]'
-//% weight = -100 blockGap = 8
 
 namespace simplified {
 
