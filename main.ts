@@ -1,10 +1,3 @@
-//% color="#307554" 
-//% icon="\uf0e7"
-//% blockGap=8
-//% weight=200
-//% block="Simplified"
-//% groups='["Sprites", "Arrays"]'
-
 namespace simplified {
 
     /**
@@ -43,7 +36,7 @@ namespace simplified {
     //% blockId=choose_random_from_array
     //% block="choose one of $choice1=screen_image_picker $choice2=screen_image_picker || $choice3=screen_image_picker $choice4=screen_image_picker $choice5=screen_image_picker"
     //% inlineInputMode=inline
-    //% help=github:simple-blocks/docs/choose-sprite
+    //% help=github:simple-blocks/docs/choose-image
     export function chooseRandomImage(choice1: Image, choice2: Image, choice3?: Image, choice4?: Image, choice5?: Image) {
         let myList = [choice1, choice2];
         if (choice3) myList.push(choice3);
@@ -52,5 +45,3 @@ namespace simplified {
         return myList._pickRandom();
     }
 }
-
-
