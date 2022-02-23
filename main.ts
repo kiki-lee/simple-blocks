@@ -1,13 +1,26 @@
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-    export function gravity_jump(thisSprite: Sprite) {
+//% color="#307554" icon="\uf7fb"
+//% block="Simplified"
+//% groups='["Sprites", "Arrays"]'
+//% weight = -100 blockGap = 8
+
+namespace simplified {
+
+    /**
+     * Allows your sprite to jump only if it's currently on a floor
+     */
+    //% group=Sprites
+    //% blockId=gravity_jump
+    //% block="make $thisSprite=variables_get(mySprite) gravity jump" || with power $velo
+    export function gravity_jump(thisSprite: Sprite, velo: number) {
+        if (!velo){
+            velo = 200;
+        }
         if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-            thisSprite.vy = -200
+            thisSprite.vy = Math.abs(velo)
         }
     }
-}
 
-namespace arrays {
+
     /**
      * Randomly chooses one of the parameter images
      *
@@ -17,6 +30,8 @@ namespace arrays {
      * @param choice4 A choice to appear in the list of player choices
      * @param choice5 A choice to appear in the list of player choices
      */
+
+    //% group=Arrays
     //% blockId=choose_random_from_array
     //% block="choose one of $choice1=screen_image_picker $choice2=screen_image_picker || $choice3=screen_image_picker $choice4=screen_image_picker $choice5=screen_image_picker"
     //% inlineInputMode=inline
